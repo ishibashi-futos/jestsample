@@ -1,6 +1,9 @@
 const FormManager = (() => {
   const FormManager = function () {
     this.items = new Map()
+    this.initInputColor = () => {
+      new wijmo.input.InputColor("#inputColor")
+    }
   }
 
   let p = FormManager.prototype
