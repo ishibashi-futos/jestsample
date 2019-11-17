@@ -65,6 +65,8 @@ describe("matchers", () => {
 
     expect(weekday).toContain("Monday")
     expect(weekday.map(v => v.toUpperCase())).toContain("MONDAY")
+    // lengthプロパティを持ち、特定の値であること
+    expect(weekday).toHaveLength(weekday.length)
   })
 
   test("例外がThrowされること", () => {
@@ -83,4 +85,13 @@ describe("matchers", () => {
     expect(compileAndroidCode).toThrow('you are using the wrong JDK')
     expect(compileAndroidCode).toThrow(/JDK/)
   })
+
+  /** 配列の中に特定の構造を持つデータが存在することを確認したい */
+  test("toContainEqual", () => {
+    const myBeverage = {delicious: true, sour: false}
+    expect((() => {
+      return [myBeverage]
+    })()).toContainEqual(myBeverage)
+  })
+
 })
