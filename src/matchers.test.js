@@ -17,6 +17,10 @@ describe("matchers", () => {
   })
 
   test("真偽値(およびそれらしく思える値)", () => {
+    expect(true).toBeTruthy()
+    expect(false).not.toBeTruthy()
+    expect(false).toBeFalsy()
+    expect(true).not.toBeFalsy()
     /** nullの評価 */
     const n = null
     expect(n).toBeNull()
@@ -92,6 +96,15 @@ describe("matchers", () => {
     expect((() => {
       return [myBeverage]
     })()).toContainEqual(myBeverage)
+  })
+
+  test("customMatcher", () =>  {
+    require("./customMatcher")
+    let map = new Map()
+    map.set("aaa", {})
+    map.set("bbb", {})
+    expect(map).toHasKey("aaa")
+    expect(map).toHasKeys(["aaa", "bbb"])
   })
 
 })
