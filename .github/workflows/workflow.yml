@@ -22,4 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm test
+    - run: npx jest --coverage
+    - name: upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage
+        path: coverage/
