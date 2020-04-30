@@ -12,6 +12,6 @@
   "devDependencies": {
     "@grapecity/wijmo.purejs.all": "^5.20193.637",
     "jest": "^24.9.0",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
